@@ -1,0 +1,71 @@
+
+// ------------------------------------------------------------------------
+// Variables
+// ------------------------------------------------------------------------
+
+$cards--padding              : 1.5rem;
+
+$card--border                : rem(1px) solid rgba($color--black, .15);
+$card--border-radius         : rem(5px);
+$card--margin-bottom         : $cards--padding;
+$card--margin-x              : $card--margin-bottom / 2;
+$card--max-width             : rem(360px);
+$card--padding               : 1rem;
+
+
+// ------------------------------------------------------------------------
+// Structure
+// ------------------------------------------------------------------------
+
+.cards {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  width: 100%;
+  
+  @include bp-min-md {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin-bottom: $card--margin-bottom;
+    cursor: pointer;
+
+    @include bp-min-md {
+      margin-left: $card--margin-x;
+      margin-right: $card--margin-x;
+      flex: 1 1 45%;
+    }
+
+    @include bp-min-lg {
+      flex: 1 1 30%;
+    }
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: $card--border;
+  border-radius: $card--border-radius;
+  max-width: $card--max-width;
+  text-align: left;
+}
+
+.card__img {
+  border-radius: $card--border-radius;
+  width: 100%;
+}
+
+
+// ------------------------------------------------------------------------
+// Font & Color
+// ------------------------------------------------------------------------
+
+.card {
+  background: $color--white;
+}
